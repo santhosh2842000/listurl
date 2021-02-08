@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        Enter a link : <input type="email" id="email">
+       
+
+        <button onclick="lists()">Add to list</button>
+        <p id="demo"></p>
+        <ul id="myList"></ul>
+        <button onclick="del()">Delete</button>
+
+    </div>
+
+    <script>
+        function lists(){
+       document.getElementById("demo").innerHTML = "Existing Urls:";
+         var link = document.getElementById("email").value;
+         var node = document.createElement("LI");              // Create a <li> node
+         var textnode = document.createTextNode(link);         // Create a text node
+         node.appendChild(textnode);                           // Append the text to <li>
+         document.getElementById("myList").appendChild(node);  // Append <li> to <ul> with id="myList"
+        }
+
+        function del() {
+        var list = document.getElementById("myList");
+        list.removeChild(list.childNodes[0]);
+        }
+        </script>
+</body>
+</html>
